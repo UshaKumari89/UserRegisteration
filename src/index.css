@@ -1,13 +1,33 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+
+
+
+@font-face {
+  font-family: 'GibsonRegular';
+  src: url('./Fonts/Canada\ Type\ -\ Gibson-Bold.ttf' ) format('truetype');
+  font-weight: normal;
+  font-style: normal;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+@font-face {
+  font-family: 'GibsonBold';
+  src: url('./Fonts/Canada\ Type\ -\ Gibson-Light.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
 }
+
+@font-face {
+  font-family: 'SemiBoldRegular';
+  src: url('./Fonts/Canada\ Type\ -\ Gibson-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'GibsonLight';
+  src: url('./Fonts/Canada\ Type\ -\ Gibson-SemiBold.ttf') format('truetype');
+  font-weight: lighter;
+  font-style: normal;
+}
+h1, h2, h3, h4, p, button{
+  font-family: 'GibsonLight', sans-serif; 
+}  
