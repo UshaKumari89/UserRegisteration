@@ -1,10 +1,10 @@
 import React from 'react';
 import './ProductRegistration.scss'; // Import your SCSS file for styling
-import productImage from "../images/jug.png"
+import productImage from "../images/jugg.png"
 
 const ProductRegistrationPage = () => {
   const productInfo = {
-    "name":"Hydration Water Jug",
+    "name":"Hydration Water Faucet",
     "model": "HYDWF",
     "sku": "9600050794",
     "pnc": "987654321",
@@ -14,7 +14,7 @@ const ProductRegistrationPage = () => {
 
   return (
     <div className="product-registration">
-      <section>
+      <section className='domatician'>
         <section className="register-your-product">
           <h1>Register your product and become a Dometican!</h1>
         </section>

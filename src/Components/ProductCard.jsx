@@ -8,7 +8,7 @@ function ProductCard() {
   
     const handleClick = () => {
       console.log("Button clicked!");
-     window.open("https://www.dometic.com/sv-se/outdoor/termosflaskor-and-muggar/vattenbehallare/dometic-hyd-wf-315692")
+     window.open("https://www.dometic.com/en-gb/outdoor/car-camping/hydration/dometic-go-hydration-water-jug-11l-331232?v=9600050825")
     };
   return (
     <div className="product-card">
@@ -16,7 +16,7 @@ function ProductCard() {
         <img src={jug} alt="Product" />
       </div>
       <div className="product-details">
-        <h3 className="product-title">Hydration Water Jug</h3>
+        <h3 className="product-title"> Hydration Water Faucet</h3>
         <section className='product-info '>
 
         <p className="product-info"> Hydration Water Jug 11L</p>

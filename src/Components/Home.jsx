@@ -22,7 +22,7 @@ function Home() {
  
       <ProductRegistrationPage/>
 
-           <Button
+      {/* <Button
         label="Product Register / Login"
         onClick={handleClick}
         className="butn"
@@ -34,7 +34,7 @@ function Home() {
           backgroundImage={bgPic}
           heading="RUNNING WATER ON THE GO"
           text="The only off-grid water solution you’ll ever need"
-          link="https://www.dometic.com/sv-se/outdoor/termosflaskor-and-muggar/vattenbehallare/dometic-hyd-wf-315692"
+          link="https://www.dometic.com/sv-se/outdoor/lp/dometic-go/portabel-vattenkran"
         />
       </section>
       <Video
@@ -50,7 +50,7 @@ function Home() {
 
       <ProductCard />
 
-      <DownloadSection />
+      <DownloadSection /> */}
     </div>
   );
 }
