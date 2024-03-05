@@ -2,10 +2,11 @@
 import './index.css';
 import Home from './Components/Home';
 import NavBar from './Components/Navbar';
+import Login from './Components/Login';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
-import ProductRegisteration from './Components/ProductRegisteration';
+
 
 function App() {
   return (
@@ -13,9 +14,7 @@ function App() {
       <NavBar/>
     <Routes>
       <Route path="/" element={<Home />} />
-      <Route path="/productregisteration" element={<ProductRegisteration />} />
-
-
+      <Route path="/Login" element={<Login/>} />
     </Routes>
      
   </Router>
