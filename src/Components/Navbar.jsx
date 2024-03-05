@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaSearch, FaShoppingCart } from 'react-icons/fa';
+// import { FaSearch, FaShoppingCart } from 'react-icons/fa';
 
 
 function NavBar() {
