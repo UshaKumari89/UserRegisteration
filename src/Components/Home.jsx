@@ -7,6 +7,7 @@ import bgPic from "../images/waterJug.jpeg";
 import ProductCard from "./ProductCard";
 import Video from "./Video";
 import DownloadSection from "./DownloadSection";
+import ProductRegistrationPage from "./ProductRegisteration";
 
 function Home() {
   const navigate = useNavigate();
@@ -18,24 +19,27 @@ function Home() {
 
   return (
     <div className="home-container">
-      <Button
+ 
+      <ProductRegistrationPage/>
+
+           <Button
         label="Product Register / Login"
         onClick={handleClick}
         className="butn"
       />
-      <section>
-         
+
+      <section className="getInspired">
         <h2>Get Inspired</h2>
         <ImageBox
           backgroundImage={bgPic}
           heading="RUNNING WATER ON THE GO"
           text="The only off-grid water solution you’ll ever need"
-          link="https://widget-hosts.mavenoid.com/dometic-nga-test/"
+          link="https://www.dometic.com/sv-se/outdoor/termosflaskor-and-muggar/vattenbehallare/dometic-hyd-wf-315692"
         />
       </section>
       <Video
         heading="How to use that"
-        videoUrl="https://www.youtube.com/embed/gvTaCJakVRo"
+        videoUrl="https://www.youtube.com/embed/KR5dfovNP-s"
         videotitle="DOMETIC | Dometic GO Hydration Water Jug 11L"
       />
       <Video
@@ -45,7 +49,8 @@ function Home() {
       />
 
       <ProductCard />
-      <DownloadSection/>
+
+      <DownloadSection />
     </div>
   );
 }

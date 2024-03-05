@@ -1,8 +1,8 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import './Video.scss'; // Import your SCSS file for styling
+import React from "react";
+import PropTypes from "prop-types";
+import "./Video.scss"; // Import your SCSS file for styling
 
-function Video({ videoUrl, videotitle , heading}) {
+function Video({ videoUrl, videotitle, heading }) {
   return (
     <section className="how-to-use">
       <h2>{heading}</h2>
@@ -12,9 +12,10 @@ function Video({ videoUrl, videotitle , heading}) {
           height="330"
           src={videoUrl}
           title={videotitle}
-            allow="accelerometer; autoplay;"
+          allow="accelerometer; autoplay;"
           allowFullScreen
         ></iframe>
+      
       </div>
     </section>
   );
@@ -23,7 +24,7 @@ function Video({ videoUrl, videotitle , heading}) {
 Video.propTypes = {
   videoUrl: PropTypes.string.isRequired,
   videotitle: PropTypes.string.isRequired,
-  heading: PropTypes.string.isRequired
+  heading: PropTypes.string.isRequired,
 };
 
 export default Video;
