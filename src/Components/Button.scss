@@ -7,7 +7,15 @@
     font-family: GibsonLight,sans-serif;
     font-size: 1.8rem;
     line-height: 16px;
-    padding: 1rem 1.5rem;
+    padding: 1rem 1.5rem;    
+  
    
 }
   
+@media screen and (max-width: 640px) {
+    .butn{
+     margin: 0 3rem;
+  
+    }
+    
+  }
