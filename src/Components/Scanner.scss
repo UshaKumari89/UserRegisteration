@@ -1,0 +1,16 @@
+.Qr-Code img {
+    width:30px;
+    height: 30px;
+    margin-left: 32rem;
+}
+.btn{
+    margin-left: 1rem;
+}
+
+
+@media screen and (max-width: 767px) {
+  
+    .Qr-Code img {
+        margin-left: 8rem;
+    }
+  }

@@ -2,13 +2,13 @@ import React from 'react';
 import jug from '../images/jug.png'
 import './ProductCard.scss'; 
 
-import { useNavigate } from "react-router-dom";
+
 
 function ProductCard() {
-    const navigate = useNavigate();
+  
     const handleClick = () => {
       console.log("Button clicked!");
-      navigate("/productregisteration"); 
+     window.open("https://www.dometic.com/sv-se/outdoor/termosflaskor-and-muggar/vattenbehallare/dometic-hyd-wf-315692")
     };
   return (
     <div className="product-card">
