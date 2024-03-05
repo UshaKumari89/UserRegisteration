@@ -14,7 +14,7 @@ function Home() {
 
   const handleClick = () => {
     console.log("Button clicked!");
-    navigate("/productregisteration");
+    navigate("/Login");
   };
 
   return (
