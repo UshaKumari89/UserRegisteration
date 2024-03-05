@@ -1,7 +1,6 @@
 .product-registration {
 
   
-  
     section {
      padding: 1rem;
       
@@ -29,6 +28,7 @@
       ul {
         list-style-type: disc;
        
+       
 
         
         li {
@@ -50,8 +50,8 @@
 
   }
   .product-info-container img{
-    height: 25rem;
-    width: 25rem;
+    height: 22rem;
+    width: 22rem;
     margin-top: -2rem;
   }
 .product-detail{
@@ -105,10 +105,14 @@ color: #413F3E;
     
   
 
-    @media screen and (max-width: 640px) {
+  @media screen and (max-width: 640px) {
+      .product-registration {
+        margin-top: -3rem;
+          
+     
+    }
       .product-info-container{
        flex-direction: column;
     
       }
-     
-    }
+  }

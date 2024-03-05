@@ -38,22 +38,22 @@ function NavBar() {
         </div>
 
         {/* Search and Cart Icons (Right-aligned) */}
-        <div className="d-flex align-items-center order-1">
-          <ul className="navbar-nav flex-row"> {/* Use flex-row class */}
+        {/* <div className="d-flex align-items-center order-1">
+          <ul className="navbar-nav flex-row">
             <li className="nav-item">
               <button className="nav-link">
                 <FaSearch />
                 Search
               </button>
-            </li>
-            <li className="nav-item">
-              <button className="nav-link">
+            </li> */}
+            {/* <li className="nav-item">
+              <button className="nav-link ms-4">
                 <FaShoppingCart />
                 Cart
               </button>
-            </li>
-          </ul>
-        </div>
+            </li> 
+           </ul>
+        </div> */}
 
         {/* Navigation Links (Centered) */}
         <div className="collapse navbar-collapse justify-content-center" id="navbarNav">

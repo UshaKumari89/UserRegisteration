@@ -22,7 +22,7 @@ function Home() {
  
       <ProductRegistrationPage/>
 
-      {/* <Button
+      <Button
         label="Product Register / Login"
         onClick={handleClick}
         className="butn"
@@ -50,7 +50,7 @@ function Home() {
 
       <ProductCard />
 
-      <DownloadSection /> */}
+      <DownloadSection />
     </div>
   );
 }
