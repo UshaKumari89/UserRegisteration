@@ -122,7 +122,7 @@ const LogIn = () => {
         // User exists, save email to localStorage
         localStorage.setItem('loginEmail', email);
         // Redirect to login page
-        navigate("/login");
+        navigate("/confirmation");
       } else {
         // User does not exist, handle accordingly
         console.log("User does not exist. Redirecting to signup page.");
