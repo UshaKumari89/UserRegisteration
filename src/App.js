@@ -2,7 +2,10 @@
 import './index.css';
 import Home from './Components/Home';
 import NavBar from './Components/Navbar';
-import Login from './Components/Login';
+import UserRegister from './Components/UserRegister';
+import SignUp from "./Components/SignUp";
+import LogIn from  './Components/LogIn';
+//import Confirmation from  './Components/Confirmation';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
@@ -14,7 +17,10 @@ function App() {
       <NavBar/>
     <Routes>
       <Route path="/" element={<Home />} />
-      <Route path="/Login" element={<Login/>} />
+      <Route path="/UserRegister" element={<UserRegister />} />
+      <Route path="/SignUp" element={<SignUp/>} />
+     <Route path="/LogIn" element={<LogIn/>} /> 
+     {/* <Route path="/Confirmation" element={<Confirmation/>} />  */}
     </Routes>
      
   </Router>
