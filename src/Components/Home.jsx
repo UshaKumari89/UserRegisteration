@@ -13,7 +13,7 @@ function Home() {
   const navigate = useNavigate();
 
   const handleClick = () => {
-    console.log("Button clicked!");
+    //console.log("Button clicked!");
     navigate("/UserRegister");
   };
 
