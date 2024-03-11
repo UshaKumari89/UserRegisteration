@@ -1,19 +1,19 @@
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import axios from 'axios';
-import './UserRegister.scss';
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import axios from "axios";
+import "./UserRegister.scss";
 import Button from "./Button";
 
 const SignUp = () => {
   const navigate = useNavigate();
 
-  const [name, setName] = useState('');
-  const [surname, setSurname] = useState('');
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [name, setName] = useState("");
+  const [surname, setSurname] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const [newsletterChecked, setNewsletterChecked] = useState(false);
   const [termsChecked, setTermsChecked] = useState(false);
-  const [error, setError] = useState('');
+  const [error, setError] = useState("");
 
   const handleNewsletterChange = () => {
     setNewsletterChecked(!newsletterChecked);
@@ -26,26 +26,25 @@ const SignUp = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:8000/api/createuser', {
+      const response = await axios.post("http://localhost:8000/api/createuser", {
         name,
         surname,
         email,
-        password
+        password,
       });
       if (response.data.success) {
         // User created successfully, save email to localStorage
-        localStorage.setItem('loginEmail', email);
+        //localStorage.setItem("loginEmail", email);
         // Navigate to login page
-        navigate('/login');
+        navigate('/login', { state: { email: email } });
       } else {
-        setError('Failed to create user');
+        setError("Failed to create user");
       }
     } catch (error) {
-      console.error('Error creating user:', error);
-      setError('Failed to create user');
+      console.error("Error creating user:", error);
+      setError("Failed to create user");
     }
   };
-  
 
   return (
     <div className="signup-login-container">
@@ -130,10 +129,7 @@ const SignUp = () => {
           </div>
         </section>
         {error && <div className="error">{error}</div>}
-        <Button
-          label="Sign up & Register"
-          type="submit"
-        />
+        <Button label="Sign up & Register" type="submit" />
       </form>
     </div>
   );
