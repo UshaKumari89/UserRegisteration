@@ -1,48 +1,57 @@
-import React, { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
-import axios from 'axios'; // Import Axios for making HTTP requests
-import './UserRegister.scss';
-import Button from './Button';
+import React, { useState, useEffect } from "react";
+import { useNavigate, useLocation } from "react-router-dom";
+import axios from "axios";
+import "./UserRegister.scss";
+import Button from "./Button";
 
 const LogIn = () => {
   const navigate = useNavigate();
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const location = useLocation();
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
   useEffect(() => {
-    const storedEmail = localStorage.getItem('loginEmail');
-    if (storedEmail) {
-      setEmail(storedEmail);
+    const { state } = location;
+    if (state && state.email) {
+      setEmail(state.email);
     }
-  }, []); // This useEffect hook will run only once, when the component mounts
+  }, [location]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
       if (!email || !password) {
-        console.error('Please enter both email and password');
+        console.error("Please enter both email and password");
         return;
       }
-  
-      // Make a POST request to check if the user exists
-      const response = await axios.post('http://localhost:8000/api/checkEmail', { email });
-      //console.log(response.data); // Log the response from the backend
-      if (response.data.redirect === '/login') {
-        // User exists, save email to localStorage
-        localStorage.setItem('loginEmail', email);
-        // Redirect to login page
+
+      console.log('Logging in with email:', email);
+
+      const response = await axios.post("http://localhost:8000/api/login", { email, password });
+
+      console.log('Login response:', response);
+
+      if (response.data.success) {
         navigate("/confirmation");
       } else {
-        // User does not exist, handle accordingly
-        console.log("User does not exist. Redirecting to signup page.");
-        // Handle redirection to signup page or show error message
+        alert(response.data.message);
       }
     } catch (error) {
-      console.error("Error checking email:", error);
-      // Handle error, show error message, etc.
+      console.error("Error logging in:", error);
+      alert("Failed to login. Please try again.");
     }
   };
-  
+
+  const handleEmailChange = (e) => {
+    const emailValue = e.target.value;
+    setEmail(emailValue);
+  };
+
+  const handlePasswordChange = (e) => {
+    const passwordValue = e.target.value;
+    setPassword(passwordValue);
+  };
+
   return (
     <div className="signup-login-container">
       <h2>Welcome back</h2>
@@ -55,7 +64,7 @@ const LogIn = () => {
               placeholder="john@gmail.com"
               className="input"
               value={email}
-              onChange={(e) => setEmail(e.target.value)}
+              onChange={handleEmailChange}
               required
             />
             <span>*</span>
@@ -70,17 +79,14 @@ const LogIn = () => {
               className="input"
               placeholder="*****"
               value={password}
-              onChange={(e) => setPassword(e.target.value)}
+              onChange={handlePasswordChange}
               required
             />
             <span>*</span>
           </section>
           <label htmlFor="password">Password</label>
         </div>
-        <Button
-          label="LogIn"
-          type="submit" // Ensure the Button component submits the form
-        />
+        <Button label="LogIn" type="submit" />
       </form>
     </div>
   );

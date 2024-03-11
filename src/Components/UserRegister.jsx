@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import axios from 'axios'; // Import Axios for making HTTP requests
+import axios from 'axios';
 import './UserRegister.scss';
 import Button from './Button';
 
@@ -19,26 +19,30 @@ const UserRegister = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      if (emailValid) {
-        const response = await axios.post('http://localhost:8000/api/checkEmail', { email });
-        if (response.data.redirect === '/login') {
-          navigate('/login');
-        } else if (response.data.redirect === '/signup') {
-          // Save email to localStorage
-          localStorage.setItem('loginEmail', email);
-          navigate('/signup');
-        } else {
-          setError('Unexpected response from server');
-        }
-      } else {
+      if (!emailValid) {
         setError('Email is required');
+        return;
+      }
+
+      console.log('Sending request to check email:', email);
+
+      const response = await axios.post('http://localhost:8000/api/checkEmail', { email });
+
+      console.log('Response:', response);
+
+      if (response.data.exists) {
+        console.log('User exists. Redirecting to login page:', email);
+        navigate('/login', { state: { email: email } });
+      } else {
+        console.log('User does not exist. Redirecting to signup page:', email);
+        localStorage.setItem('loginEmail', email);
+        navigate('/signup');
       }
     } catch (error) {
-      console.error('Error checking login status:', error);
-      setError('Failed to check login status');
+      console.error('Error checking email:', error);
+      setError('Failed to check email');
     }
   };
-  
 
   return (
     <div className="signup-login-container">
