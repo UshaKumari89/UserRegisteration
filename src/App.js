@@ -3,7 +3,7 @@ import './index.css';
 import Home from './Components/Home';
 import NavBar from './Components/Navbar';
 import UserRegister from './Components/UserRegister';
-import SignUp from "./Components/SignUp";
+import SignUp from "./Components/SignIn";
 import LogIn from  './Components/LogIn';
 //import Confirmation from  './Components/Confirmation';
 import 'bootstrap/dist/css/bootstrap.min.css';
