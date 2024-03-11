@@ -3,7 +3,7 @@ import Home from './Components/Home';
 import NavBar from './Components/Navbar';
 import UserRegister from './Components/UserRegister';
 import SignUp from "./Components/SignIn";
-import Login from './Components/LogIn'; // Corrected import statement
+import Login from './Components/LogIn'; 
 //import Confirmation from  './Components/Confirmation';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
